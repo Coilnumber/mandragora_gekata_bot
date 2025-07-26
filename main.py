@@ -4,9 +4,14 @@ from aiogram.filters import CommandStart
 from aiogram.types import FSInputFile, Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from handlers import start, callback
+from config import Config, load_config
+
+config: Config = load_config()
+BOT_TOKEN: str = config.tg_bot.token
 
 
-bot = Bot(token='7983877425:AAEqs4Su7COXoSPTL-m0QOBtKZJ824-1kSQ')
+
+bot = Bot(BOT_TOKEN)
 dp = Dispatcher()
 
 
