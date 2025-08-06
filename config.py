@@ -15,7 +15,7 @@ class Config:
 
 # Создаем функцию, которая будет читать файл .env и возвращать экземпляр
 # класса Config с заполненными полями token и admin_ids
-def load_config(path: Optional[str] = None) -> Config::
+def load_config(path: Optional[str] = None) -> Config:
     env = Env()
     env.read_env(path)
     return Config(tg_bot=TgBot(token=env('BOT_TOKEN')))
