@@ -7,11 +7,10 @@ from handlers import start, callback
 from config import Config, load_config
 
 config: Config = load_config()
-#BOT_TOKEN: str = config.tg_bot.token
+BOT_TOKEN: str = config.tg_bot.token
 
-
-
-bot = Bot(token="7852599299:AAFZVgxzJjGn7k_luA3apQdc_yRa_7bn0kQ")
+# Создаем объекты бота и диспетчера
+bot = Bot(BOT_TOKEN)
 dp = Dispatcher()
 
 
